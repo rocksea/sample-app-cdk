@@ -1,3 +1,7 @@
+### Swap files ###
+*.swp
+
+### Node.js files ###
 *.js
 !jest.config.js
 *.d.ts

@@ -117,7 +117,7 @@ export class KarpenterAddOn extends HelmAddOn {
     }
 
     @dependable('VpcCniAddOn')
-    @conflictsWith('ClusterAutoScalerAddOn')
+    //@conflictsWith('ClusterAutoScalerAddOn')
     deploy(clusterInfo: ClusterInfo): Promise<Construct> {
         const cluster = clusterInfo.cluster;
         const endpoint = cluster.clusterEndpoint;

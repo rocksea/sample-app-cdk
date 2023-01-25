@@ -1,4 +1,5 @@
 import { Cluster } from 'aws-cdk-lib/aws-eks';
+import { ClusterInfo } from '../../spi';
 import { createNamespace } from "../../utils/namespace-utils";
 import { HelmAddOn, HelmAddOnProps, HelmAddOnUserProps } from "../helm-addon";
 
@@ -24,8 +25,8 @@ export class ArgoRolloutsAddOn extends HelmAddOn {
         this.options = this.props;
     }
 
-    deploy(cluster: Cluster): void {
-        const ns = createNamespace(this.options.namespace!, cluster, true, true);
-        this.addHelmChart(cluster, this.options.values);
+    deploy(clusterInfo: ClusterInfo): void {
+        const ns = createNamespace(this.options.namespace!, clusterInfo.cluster, true, true);
+        this.addHelmChart(clusterInfo, this.options.values);
     }
 }

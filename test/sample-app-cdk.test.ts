@@ -18,7 +18,7 @@ test('API Gateway Created', () => {
    
     const stack = blueprints.EksBlueprint.builder()
         .account(account).region(region)
-        .version(KubernetesVersion.V1_23).build(app, "stack-123");
+        .version(KubernetesVersion.V1_23).build(app, "SampleAppCdkStack");
     
     const template = Template.fromStack(stack);
 

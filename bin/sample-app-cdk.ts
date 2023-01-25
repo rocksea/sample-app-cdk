@@ -20,6 +20,7 @@ const addOns: Array<blueprints.ClusterAddOn> = [
     new blueprints.addons.VpcCniAddOn(),
     new blueprints.addons.CoreDnsAddOn(),
     new blueprints.addons.KubeProxyAddOn(),
+    new blueprints.addons.KarpenterAddOn,
     new blueprints.addons.XrayAddOn()
 ];
 
@@ -48,4 +49,3 @@ const stack = blueprints.EksBlueprint.builder()
     .clusterProvider(clusterProvider)
     .addOns(...addOns)
     .build(app, clusterName);
-// do something with stack or drop this variable
